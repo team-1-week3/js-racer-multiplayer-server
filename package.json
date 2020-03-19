@@ -1,0 +1,25 @@
+{
+  "name": "js-racer-multiplayer-server",
+  "version": "1.0.0",
+  "description": "## Project setup ``` npm install ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-1-week3/js-racer-multiplayer-server.git"
+  },
+  "keywords": [],
+  "author": "M. Irfan Maulana, Maxwell Hamzah, Ryan Adhi Putra, Ulfa Hasanah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/team-1-week3/js-racer-multiplayer-server/issues"
+  },
+  "homepage": "https://github.com/team-1-week3/js-racer-multiplayer-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
