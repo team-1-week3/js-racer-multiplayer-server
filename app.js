@@ -6,10 +6,12 @@ const PORT = 3000 ;
 
 let positions= [
     {
+      top: 80,
       x: 340,
       y: 620,
     },
     {
+      top: 80,
       x: 100,
       y: 620
     }
@@ -24,9 +26,9 @@ io.on('connection', socket => {
 
         if(!idFirst && !idSecond) {
             idFirst = data.id
-            positions[0].y -=data.dice;
-            if (positions[0].y <=0 ) {
-                positions[0].y = 0
+            positions[0].top -= 2; // top -5
+            if (positions[0].top <=0 ) {
+                positions[0].top = 0
                 io.emit('positions', positions)
                 io.emit('winner', data.name)
             } else {
@@ -34,9 +36,9 @@ io.on('connection', socket => {
             }
             
         } else if(idFirst && !idSecond && idFirst !== data.id) {
-            positions[1].y -=data.dice;
-                if (positions[1].y <=0 ) {
-                    positions[1].y = 0
+            positions[1].top -= 2; // top -5
+                if (positions[1].top <=0 ) {
+                    positions[1].top = 0
                     io.emit('positions', positions)
                     io.emit('winner', data.name)
                 } else {
@@ -47,18 +49,18 @@ io.on('connection', socket => {
 
         }
             if (idFirst === data.id) {
-                positions[0].y -=data.dice;
-                if (positions[0].y <=0 ) {
-                    positions[0].y = 0
+                positions[0].top -= 2; // top -5
+                if (positions[0].top <=0 ) {
+                    positions[0].top = 0
                     io.emit('positions', positions)
                     io.emit('winner', data.name)
                 } else {
                     io.emit('positions', positions)
                 }
             } else if(idSecond === data.id){
-                positions[1].y -=data.dice;
-                if (positions[1].y <=0 ) {
-                    positions[1].y = 0
+                positions[1].top -= 2; // top -5
+                if (positions[1].top <=0 ) {
+                    positions[1].top = 0
                     io.emit('positions', positions)
                     io.emit('winner', data.name)
                 } else {
