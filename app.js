@@ -17,7 +17,7 @@ let positions= [
       y: 620
     }
   ]
- 
+
 let idFirst;
 let idSecond;
 
