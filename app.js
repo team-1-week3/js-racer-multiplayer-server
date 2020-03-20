@@ -15,11 +15,10 @@ let positions= [
     }
   ]
 
-let winner = true
 let idFirst;
 let idSecond;
 
-io.on('connection', socket => {
+io.on('connection', socket => {    
     socket.emit('positions', positions);
     socket.on('move', data => {
 
@@ -29,7 +28,7 @@ io.on('connection', socket => {
             if (positions[0].y <=0 ) {
                 positions[0].y = 0
                 io.emit('positions', positions)
-                io.emit('winner', winner)
+                io.emit('winner', data.name)
             } else {
                 io.emit('positions', positions)
             }
@@ -39,7 +38,7 @@ io.on('connection', socket => {
                 if (positions[1].y <=0 ) {
                     positions[1].y = 0
                     io.emit('positions', positions)
-                    io.emit('winner', winner)
+                    io.emit('winner', data.name)
                 } else {
                     io.emit('positions', positions)
                 }
@@ -52,7 +51,7 @@ io.on('connection', socket => {
                 if (positions[0].y <=0 ) {
                     positions[0].y = 0
                     io.emit('positions', positions)
-                    io.emit('winner', winner)
+                    io.emit('winner', data.name)
                 } else {
                     io.emit('positions', positions)
                 }
@@ -61,7 +60,7 @@ io.on('connection', socket => {
                 if (positions[1].y <=0 ) {
                     positions[1].y = 0
                     io.emit('positions', positions)
-                    io.emit('winner', winner)
+                    io.emit('winner', data.name)
                 } else {
                     io.emit('positions', positions)
                 }
